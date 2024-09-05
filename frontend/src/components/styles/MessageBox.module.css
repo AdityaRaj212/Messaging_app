@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 100%;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
 }
@@ -31,6 +31,7 @@
 .message {
   max-width: 60%;
   padding: 14px;
+  margin: 1rem;
   border-radius: 12px;
   font-size: 15px;
   position: relative;
@@ -79,7 +80,7 @@
   width: 64px;
   height: 64px;
   margin-bottom: 12px;
-  filter: invert(80%) sepia(100%) saturate(10%) hue-rotate(180deg); /* Stylish icon filter */
+  filter: invert(80%) sepia(100%) saturate(10%) hue-rotate(180deg); 
 }
 
 
@@ -88,9 +89,11 @@
   display: flex;
   align-items: center;
   padding: 15px;
-  background-color: #1e2940; /* Deep blue-grey background */
-  border-top: 1px solid #394a61; /* Subtle border */
-  border-radius: 0 0 16px 16px; /* Rounded at the bottom */
+  background-color: #1e2940; 
+  border-top: 1px solid #394a61; 
+  border-radius: 0 0 16px 16px; 
+  position: sticky;
+  bottom: 2rem;
 }
 
 .messageInput {

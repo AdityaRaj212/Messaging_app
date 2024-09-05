@@ -15,7 +15,6 @@ function App() {
       <StateProvider>
         <Router>
           <Routes>
-            {/* <Route path = '/' element = {<ShortProfile userId={'66d720d4baf49d4a3904e2fd'}/>} /> */}
             <Route path = '/' element = {<Home />} />
             <Route path = '/signup' element={<Signup />} />
             <Route path = '/login' element={<SignIn />} />

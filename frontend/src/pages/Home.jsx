@@ -6,10 +6,18 @@ import MessageBox from '../components/MessageBox';
 import AllUsers from '../components/AllUsers';
 import { StateContext } from '../context/StateContext';
 import ShortProfile from '../components/ShortProfile';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
+
     const {user2Id, msgExpanded} = useContext(StateContext);
-    let {user} = useContext(AuthContext);
+    let {user, isAuthenticated} = useContext(AuthContext);
+
+    if(!isAuthenticated){
+        navigate('/login');
+    }
+
     const [users, setUsers] = useState([]);
 
     console.log(user);
@@ -36,25 +44,42 @@ const Home = () => {
     },[])
 
     return (
-        <div className={styles.container}>
-            <div className={styles.contactList}>
-               {users.map(User=>(
-                <div className={styles.userCard}>
-                    <AllUsers key={user._id} User = {User} />
+        <div className={styles.mainContainer}>
+            <div className={styles.header}>
+                <div className={styles.myProfile}>
+
                 </div>
-               ))}
+                <div className={styles.options}>
+                    <div className={styles.createGroup}>
+    
+                    </div>
+                    <div className={styles.logout}>
+                        {/* <button className={styles.sendButton}>
+                            Logout
+                        </button> */}
+                    </div>
+                </div>
             </div>
-            <div className={styles.detailedChat}>
-                {msgExpanded ? 
-                    (
-                        <>
-                            <ShortProfile userId = {user2Id} />
-                            <MessageBox user2Id = {user2Id} />
-                        </>
-                    )
-                    :
-                    'No'
-                }
+            <div className={styles.container}>
+                <div className={styles.contactList}>
+                {users.map(User=>(
+                    <div className={styles.userCard}>
+                        <AllUsers key={user._id} User = {User} />
+                    </div>
+                ))}
+                </div>
+                <div className={styles.detailedChat}>
+                    {msgExpanded ? 
+                        (
+                            <>
+                                <ShortProfile userId = {user2Id} />
+                                <MessageBox user2Id = {user2Id} />
+                            </>
+                        )
+                        :
+                        'No'
+                    }
+                </div>
             </div>
         </div>
     )

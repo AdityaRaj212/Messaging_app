@@ -1,5 +1,16 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .container{
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: row;
     color: white;
@@ -9,16 +20,17 @@
     display: flex;
     flex-direction: column;
     width: 25vw;
-    border: 2px solid red;
+    /* border: 2px solid white; */
     padding: 1rem;
 }
 
 .detailedChat{
     display: flex;
     flex-direction: column;
-  background: linear-gradient(145deg, #1f2a48, #28395e); 
-
+    background: linear-gradient(145deg, #1f2a48, #28395e); 
+    border-radius: 10px;
+    margin: 0.5rem;
     width: 75vw;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 1rem;
 }

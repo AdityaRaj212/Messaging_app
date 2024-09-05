@@ -48,8 +48,7 @@ const User = ({message}) => {
     return (
         <div className={styles.container}>
             <div className={styles.groupIcon}>
-                {/* Example icon or initials */}
-                {name[0]}
+                {name[0].toUpperCase()}
             </div>
 
             <div className={styles.info}>

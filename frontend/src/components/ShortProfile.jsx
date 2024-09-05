@@ -5,15 +5,17 @@ import axios from 'axios';
 const ShortProfile = ({ userId }) => {
     const [user, setUser] = useState(null);
     const [userName, setUserName] = useState('Unknown');
+    const [userStatus, setUserStatus] = useState('Offline');
 
     useEffect(() => {
         const fetchUserDetails = async () => {
             try {
                 const userResponse = await axios.get(`/api/user/get-by-id/${userId}`);
-                console.log(userResponse.data);
-                setUser(userResponse.data.user);
-                if (userResponse.data.user) {
-                    setUserName(userResponse.data.user.userName);
+                const userData = userResponse.data.user;
+                setUser(userData);
+                if (userData) {
+                    setUserName(userData.userName);
+                    setUserStatus(userData.status || 'Offline'); // Assuming user status is part of user data
                 }
             } catch (error) {
                 console.error("Error fetching user details:", error);
@@ -26,10 +28,15 @@ const ShortProfile = ({ userId }) => {
     return (
         <div className={styles.container}>
             <div className={styles.profileImg}>
-                {userName[0]}
+                {userName[0].toUpperCase()}
             </div>
-            <div className={styles.userName}>
-                {userName}
+            <div className={styles.userInfo}>
+                <div className={styles.userName}>
+                    {userName}
+                </div>
+                <div className={`${styles.userStatus} ${userStatus === 'Online' ? styles.online : styles.offline}`}>
+                    {userStatus}
+                </div>
             </div>
         </div>
     );

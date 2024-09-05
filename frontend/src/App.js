@@ -1,13 +1,12 @@
+// App.jsx
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import Signup from './components/Signup';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ShortProfile from './components/ShortProfile';
-import { AuthProvider } from './context/AuthContext';
-import User from './components/User';
 import Home from './pages/Home';
+import { AuthProvider } from './context/AuthContext';
 import { StateProvider } from './context/StateContext';
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -15,9 +14,15 @@ function App() {
       <StateProvider>
         <Router>
           <Routes>
-            <Route path = '/' element = {<Home />} />
-            <Route path = '/signup' element={<Signup />} />
-            <Route path = '/login' element={<SignIn />} />
+            {/* Public Routes */}
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<SignIn />} />
+
+            {/* Protected Routes */}
+            <Route element={<ProtectedRoute />}>
+              <Route path="/" element={<Home />} />
+              {/* Add other protected routes here */}
+            </Route>
           </Routes>
         </Router>
       </StateProvider>

@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: #2d2d2d; /* Dark background color for a dark theme */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    background: #3a3a3a; /* Slightly lighter on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.groupIcon {
+    width: 50px;
+    height: 50px;
+    background: #007bff; /* Bright color for the icon background */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.nameAndIime {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.time {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.msgAndNo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.msg {
+    font-size: 0.9rem;
+    color: #ccc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.no {
+    font-size: 0.9rem;
+    background: #ff4757; /* Accent color for notification badges */
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-weight: 500;
+}

@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: #333;
+    padding: 10px 15px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profileImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    margin-right: 10px;
+    border: 2px solid #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.profileImg:hover {
+    background: #0056b3;
+}
+
+.userName {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}

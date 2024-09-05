@@ -1,0 +1,55 @@
+[
+    {
+      "name": "John Doe",
+      "userName": "johndoe",
+      "dob": "1990-01-15",
+      "email": "johndoe@example.com",
+      "password": "hashedpassword123",
+      "createdAt": "2023-09-05T09:30:00.000Z",
+      "updatedAt": "2023-09-05T09:30:00.000Z",
+      "profile_img": "https://example.com/images/johndoe.jpg",
+      "status": "Online",
+      "bio": "Software engineer with 10 years of experience.",
+      "lastSeen": "2023-09-05T09:30:00.000Z"
+    },
+    {
+      "name": "Jane Smith",
+      "userName": "janesmith",
+      "dob": "1995-06-25",
+      "email": "janesmith@example.com",
+      "password": "hashedpassword456",
+      "createdAt": "2023-08-10T14:12:00.000Z",
+      "updatedAt": "2023-09-01T10:20:00.000Z",
+      "profile_img": "",
+      "status": "Offline",
+      "bio": "",
+      "lastSeen": "2023-09-01T10:20:00.000Z"
+    },
+    {
+      "name": "Michael Brown",
+      "userName": "michaelb",
+      "dob": "",
+      "email": "michaelbrown@example.com",
+      "password": "hashedpassword789",
+      "createdAt": "2023-07-15T16:45:00.000Z",
+      "updatedAt": "2023-07-15T16:45:00.000Z",
+      "profile_img": "",
+      "status": "Online",
+      "bio": "Loves to travel and explore new places.",
+      "lastSeen": "2023-09-04T16:45:00.000Z"
+    },
+    {
+      "name": "Emily Johnson",
+      "userName": "emilyj",
+      "dob": "1988-04-17",
+      "email": "emilyjohnson@example.com",
+      "password": "hashedpassword321",
+      "createdAt": "2023-06-30T08:10:00.000Z",
+      "updatedAt": "2023-07-01T09:30:00.000Z",
+      "profile_img": "https://example.com/images/emilyjohnson.jpg",
+      "status": "Away",
+      "bio": "",
+      "lastSeen": "2023-09-05T07:45:00.000Z"
+    }
+  ]
+  

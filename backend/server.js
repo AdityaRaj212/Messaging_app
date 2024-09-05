@@ -6,6 +6,10 @@ import cors from 'cors';
 import path from 'path';
 import http from 'http';
 import { connectUsingMongoose } from './config/mongoose.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 import userRouter from './features/user/user.routes.js';
 import messageRouter from './features/message/message.routes.js';
@@ -24,6 +28,10 @@ server.use(session({
     saveUninitialized: true,
     cookie: { secure: false }
 }));
+
+const buildPath = path.resolve(__dirname, '../frontend/build');
+console.log(`Serving static files from ${buildPath}`);
+server.use(express.static(buildPath));
 
 server.use('/api/user', userRouter);
 server.use('/api/message', messageRouter);

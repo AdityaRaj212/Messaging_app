@@ -48,6 +48,11 @@ export default class UserController{
                     user,
                     token
                 })
+            }else{
+                res.status(401).json({
+                    status: false,
+                    msg: "Invalid credentials"
+                });
             }
         }catch(err){
             res.status(500).json({

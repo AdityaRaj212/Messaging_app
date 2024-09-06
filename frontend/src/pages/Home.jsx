@@ -77,7 +77,7 @@ const Home = () => {
                             </>
                         )
                         :
-                        'No'
+                        'Messaging app'
                     }
                 </div>
             </div>

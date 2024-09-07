@@ -37,11 +37,16 @@ const SignIn = () => {
     try{
       const response = await axios.post('/api/user/signIn', { email, password });
       const { user, token } = response.data;
+      // console.log('user: ', user.length);
       // setUser(user);
-      localStorage.setItem('jwtToken', token);
-      localStorage.setItem('userInfo', JSON.stringify(user));
-      setUser(user);
-      setIsAuthenticated(true);
+      if(user.length>0){
+        localStorage.setItem('jwtToken', token);
+        localStorage.setItem('userInfo', JSON.stringify(user));
+        setUser(user);
+        setIsAuthenticated(true);
+      }else{
+        window.location.reload();
+      }
 
       // const result = await axios.post('/api/user/signIn', {
       //   email,

@@ -14,6 +14,8 @@ const Home = () => {
     const {user2Id, msgExpanded} = useContext(StateContext);
     let {user, isAuthenticated} = useContext(AuthContext);
 
+    console.log(isAuthenticated);
+
     if(!isAuthenticated){
         navigate('/login');
     }
@@ -29,11 +31,15 @@ const Home = () => {
 
     useEffect(()=>{
         const fetchMessages = async () => {
-            const response = await axios.get(`/api/message/for-me/${user._id}`);
-            setMessages(response.data.messages);
+            try{
+                const response = await axios.get(`/api/message/for-me/${user._id}`);
+                setMessages(response.data.messages);
+            }catch(err){
+                console.error('Error while fetching messages');
+            }
         }
         fetchMessages();
-    },[user._id]);
+    },[user?._id]);
 
     useEffect(()=>{
         const fetchUsers = async () => {
@@ -77,7 +83,7 @@ const Home = () => {
                             </>
                         )
                         :
-                        'Messaging app'
+                        'Messaging app - Select any user from left bar to chat with them'
                     }
                 </div>
             </div>

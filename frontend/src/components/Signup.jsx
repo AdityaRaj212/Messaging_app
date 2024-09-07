@@ -4,6 +4,8 @@ import { Container, TextField, Button, Typography, Box, useStepContext } from '@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import './styles/Signup.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const theme = createTheme({
   palette: {
@@ -22,6 +24,8 @@ const theme = createTheme({
 });
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -38,7 +42,7 @@ const Signup = () => {
 
     console.log(result.status);
     if(result.status){
-      console.log('signed up');
+      navigate('/login');
     }else{
       console.log('Signup failed');
     }
